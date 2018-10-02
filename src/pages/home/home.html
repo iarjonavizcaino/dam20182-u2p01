@@ -12,8 +12,21 @@
       NavPush1
     </ion-card-header>
     <ion-card-content>
-      <p>Envío de parámetros a otra página</p>
-      <button ion-button block (click)="goToOtherPage()">Other Page 1</button>
+      <p>{{credentials.user}}</p>
+      <ion-item>
+        <ion-label floating>Usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="credentials.user">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="credentials.password">
+        </ion-input>
+      </ion-item>
+
+      <button ion-button block (click)="goToOtherPage()"
+      *ngIf="credentials.user&&credentials.password"
+      >Other Page 1</button>
     </ion-card-content>
   </ion-card>
 </ion-content>
