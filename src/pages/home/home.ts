@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { OtherPage } from "../otherPage/otherPage";
+import { ApiRest } from "../../services/apirest";
 
 @Component({
   selector: 'page-home',
@@ -16,9 +17,10 @@ export class HomePage {
     password:''
   };
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public apirest:ApiRest) {
     //this.credentials.user="Israel";
     //this.credentials.password ="12345";
+    this.apirest.getUsers();
   }
 
   goToOtherPage(): void {
@@ -33,6 +35,8 @@ export class HomePage {
       alert("válido");
     else
       alert("inválido")
+    
+    alert(JSON.stringify(this.apirest.users));
   }
 
   ionViewDidLoad() {

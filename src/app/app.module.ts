@@ -8,6 +8,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { OtherPage } from "../pages/otherPage/otherPage";
 
+import { ApiRest } from "../services/apirest";
+
+import { HttpModule } from "@angular/http";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -16,6 +20,7 @@ import { OtherPage } from "../pages/otherPage/otherPage";
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -27,6 +32,7 @@ import { OtherPage } from "../pages/otherPage/otherPage";
   providers: [
     StatusBar,
     SplashScreen,
+    ApiRest,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
