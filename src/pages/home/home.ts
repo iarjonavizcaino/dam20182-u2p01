@@ -12,7 +12,7 @@ export class HomePage {
   private user:string;
   private password:string;
 
-  private credentials:Object = {
+  private credentials = {
     user:'',
     password:''
   };
@@ -25,14 +25,15 @@ export class HomePage {
 
   goToOtherPage(): void {
     console.log('Ir hacia otra página');
-    //this.navCtrl.push(OtherPage);
     console.log(this.credentials.user);
     console.log(this.credentials.password);
     //alert(this.credentials.user+";"+this.credentials.password);
     if(this.credentials.user==='admin'&&
-      this.credentials.password==='admin'
-    )
+    this.credentials.password==='admin'
+    ) {
       alert("válido");
+      this.navCtrl.push(OtherPage);
+    }
     else
       alert("inválido")
     

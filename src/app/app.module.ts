@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { OtherPage } from "../pages/otherPage/otherPage";
 
 import { ApiRest } from "../services/apirest";
+import { PlacesRest } from "../services/placesrest";
 
 import { HttpModule } from "@angular/http";
 
@@ -33,6 +34,7 @@ import { HttpModule } from "@angular/http";
     StatusBar,
     SplashScreen,
     ApiRest,
+    PlacesRest,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
